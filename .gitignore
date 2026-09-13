@@ -1,0 +1,4 @@
+.github/agents/
+node_modules/
+.env
+.env.*
