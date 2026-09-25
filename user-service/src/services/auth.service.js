@@ -37,6 +37,14 @@ const verifyOTP = async(otp, otpSessionId) =>{
                email: meta.email,
                password: meta.hashedPassword,
                emailVerified: true
+          },
+          select: {
+               id: true,
+               firstName: true,
+               lastName: true,
+               email: true,
+               emailVerified: true,
+               createdAt: true
           }
      })
 

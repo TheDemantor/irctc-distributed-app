@@ -15,7 +15,7 @@ const kafka = new Kafka({
 const producer = kafka.producer({
      allowAutoTopicCreation: true,
      transactionTimeout: 30000,
-     idempotent: true, 
+     idempotent: true, // to ensure exactly-once delivery
      maxInFlightRequests: 5,
      retry: {
           retries: 5,
@@ -39,5 +39,8 @@ const disconnectProducer = async () => {
           logger.info('Kafka producer disconnected');
      }
 };
+
+process.on('SIGTERM', disconnectProducer);
+process.on('SIGINT', disconnectProducer);
 
 module.exports = { kafka, producer, connectProducer, disconnectProducer };
