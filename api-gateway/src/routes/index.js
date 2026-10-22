@@ -71,56 +71,56 @@ router.delete(
      userServiceProxy
 )
 
-// const adminServiceProxy = createProxy('adminService', config.SERVICES.ADMIN_SERVICE_URL);
+const adminServiceProxy = createProxy('adminService', config.SERVICES.ADMIN_SERVICE_URL);
 
-// router.post(
-//      '/admins/stations/station',
-//      requireAuth,
-//      combinedRateLimit(),
-//      adminServiceProxy
-// );
+router.post(
+     '/admins/stations/station',
+     requireAuth,
+     combinedRateLimit(),
+     adminServiceProxy
+);
 
-// router.post(
-//      '/admins/trains/train',
-//      requireAuth,
-//      combinedRateLimit(),
-//      adminServiceProxy
-// );
+router.post(
+     '/admins/trains/train',
+     requireAuth,
+     combinedRateLimit(),
+     adminServiceProxy
+);
 
-// router.post(
-//      '/admins/trains/route',
-//      requireAuth,
-//      combinedRateLimit(),
-//      adminServiceProxy
-// )
+router.post(
+     '/admins/trains/route',
+     requireAuth,
+     combinedRateLimit(),
+     adminServiceProxy
+)
 
-// router.post(
-//      '/admins/schedules/schedule',
-//      requireAuth,
-//      combinedRateLimit(),
-//      adminServiceProxy
-// )
+router.post(
+     '/admins/schedules/schedule',
+     requireAuth,
+     combinedRateLimit(),
+     adminServiceProxy
+)
 
-// router.get(
-//      '/admins/stations/station',
-//      requireAuth,
-//      combinedRateLimit(),
-//      adminServiceProxy
-// )
+router.get(
+     '/admins/stations/station',
+     requireAuth,
+     combinedRateLimit(),
+     adminServiceProxy
+)
 
-// router.get(
-//      '/admins/trains/train/:trainId',
-//      requireAuth,
-//      combinedRateLimit(),
-//      adminServiceProxy
-// );
+router.get(
+     '/admins/trains/train/:trainId',
+     requireAuth,
+     combinedRateLimit(),
+     adminServiceProxy
+);
 
-// router.put(
-//      '/admins/schedules/schedule/:scheduleId',
-//      requireAuth,
-//      combinedRateLimit(),
-//      adminServiceProxy
-// )
+router.put(
+     '/admins/schedules/schedule/:scheduleId',
+     requireAuth,
+     combinedRateLimit(),
+     adminServiceProxy
+)
 // // ===========================
 // // SEARCH SERVICE ROUTES (public - no auth required)
 // // ===========================
