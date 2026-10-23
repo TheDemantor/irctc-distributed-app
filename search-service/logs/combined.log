@@ -1,0 +1,63 @@
+{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-22 18:32:19"}
+{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-22 18:32:21"}
+{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-22 18:32:21"}
+{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-22 18:32:23"}
+{"level":"info","message":"Deleted index: stations","service":"search-service","timestamp":"2026-10-22 18:35:36"}
+{"level":"info","message":"Deleted index: trains","service":"search-service","timestamp":"2026-10-22 18:35:36"}
+{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-22 18:35:37"}
+{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-22 18:35:38"}
+{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-22 18:35:38"}
+{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-22 18:35:39"}
+{"level":"info","message":"Deleted index: stations","service":"search-service","timestamp":"2026-10-22 18:48:46"}
+{"level":"info","message":"Deleted index: trains","service":"search-service","timestamp":"2026-10-22 18:48:46"}
+{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-22 18:48:47"}
+{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-22 18:48:47"}
+{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-22 18:48:47"}
+{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-22 18:48:51"}
+{"level":"info","message":"Deleted index: stations","service":"search-service","timestamp":"2026-10-22 18:52:17"}
+{"level":"info","message":"Deleted index: trains","service":"search-service","timestamp":"2026-10-22 18:52:17"}
+{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-22 18:52:18"}
+{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-22 18:52:19"}
+{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-22 18:52:19"}
+{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-22 18:52:20"}
+{"level":"info","message":"Search consumer connected","service":"search-service","timestamp":"2026-10-22 18:52:20"}
+{"level":"info","message":"Search consumer running...","service":"search-service","timestamp":"2026-10-22 18:52:31"}
+{"level":"info","message":"search-service running on http://localhost:4002","service":"search-service","timestamp":"2026-10-22 18:52:32"}
+{"level":"info","message":"Processing admin.route-created","offset":"0","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:36"}
+{"level":"info","message":"Indexed train 12259 with 2 stations","service":"search-service","timestamp":"2026-10-22 18:52:36"}
+{"level":"info","message":"Processing admin.route-created","offset":"1","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:37"}
+{"level":"info","message":"Indexed train 12951 with 3 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
+{"level":"info","message":"Processing admin.route-created","offset":"2","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:38"}
+{"level":"info","message":"Indexed train 12301 with 3 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
+{"level":"info","message":"Processing admin.route-created","offset":"3","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:38"}
+{"level":"info","message":"Indexed train 12002 with 3 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
+{"level":"info","message":"Processing admin.route-created","offset":"4","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:38"}
+{"level":"info","message":"Indexed train 12622 with 5 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
+{"level":"info","message":"Processing admin.route-created","offset":"5","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:38"}
+{"level":"info","message":"Indexed train 12626 with 2 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
+{"level":"info","message":"Processing admin.station-created","offset":"0","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:40"}
+{"level":"info","message":"Indexed station Howrah Junction (HWH)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Processing admin.station-created","offset":"1","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Indexed station New Delhi Railway Station (NDLS)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Processing admin.station-created","offset":"2","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Indexed station Chhatrapati Shivaji Maharaj Terminus (CSMT)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Processing admin.station-created","offset":"3","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Indexed station Pune Junction (PUNE)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Processing admin.station-created","offset":"4","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Indexed station Bhopal Junction (BPL)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Processing admin.station-created","offset":"5","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Indexed station Chennai Central (MAS)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Processing admin.station-created","offset":"6","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
+{"level":"info","message":"Indexed station KSR Bengaluru (SBC)","service":"search-service","timestamp":"2026-10-22 18:52:42"}
+{"level":"info","message":"Processing admin.schedule-created","offset":"0","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:42"}
+{"level":"info","message":"Indexed schedule a475e6f4-ed07-4bcd-9a61-00d12b071597 for train a4ada108-451a-4487-913e-e8189987a27b","service":"search-service","timestamp":"2026-10-22 18:52:42"}
+{"level":"info","message":"Processing admin.schedule-created","offset":"1","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:42"}
+{"level":"info","message":"Indexed schedule faeb2489-4c7f-4100-b812-962e2650ef91 for train 12acd063-02f4-4654-839a-e5a57a44792a","service":"search-service","timestamp":"2026-10-22 18:52:43"}
+{"level":"info","message":"Processing admin.schedule-created","offset":"2","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:43"}
+{"level":"info","message":"Indexed schedule a4db2929-2df8-4459-a84d-d314ad373b97 for train 15395827-ff60-4f51-b3df-dd335a4b3cf8","service":"search-service","timestamp":"2026-10-22 18:52:43"}
+{"level":"info","message":"Processing admin.schedule-created","offset":"3","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:43"}
+{"level":"info","message":"Indexed schedule 14af44f4-b3d9-4b3f-af7f-c2e759cd97ab for train 29e2f430-cc13-4f9b-9ff6-9a1971d2c1d3","service":"search-service","timestamp":"2026-10-22 18:52:43"}
+{"level":"info","message":"Processing admin.schedule-created","offset":"4","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:43"}
+{"level":"info","message":"Indexed schedule 7fa37053-2724-4818-9c28-e60c4e37ef83 for train 73ef49bf-4e64-4597-a21a-78cb82ec9031","service":"search-service","timestamp":"2026-10-22 18:52:43"}
+{"level":"info","message":"Processing admin.schedule-created","offset":"5","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:43"}
+{"level":"info","message":"Indexed schedule e981d0cb-263d-4067-855d-145f1a28d451 for train ba0cb8ad-31c3-43d7-8bc4-1328c7495bd9","service":"search-service","timestamp":"2026-10-22 18:52:43"}

@@ -20,7 +20,7 @@ const KAFKA_TOPICS = {
      SCHEDULE_CANCELLED: 'admin.schedule-cancelled',
 
      // // Inventory topics (inventory-service -> search-service)
-     // SEAT_AVAILABILITY_UPDATED: 'inventory.seat-availability-updated',
+     SEAT_AVAILABILITY_UPDATED: 'inventory.seat-availability-updated',
 
      // // Booking topics (booking-service -> notification-service)
      // BOOKING_CONFIRMED: 'booking.confirmed',
@@ -34,7 +34,7 @@ const KAFKA_TOPICS = {
      // // Dead-letter queues (per service — poison messages land here)
      // DLQ_BOOKING: 'dlq.booking-service',
      // DLQ_INVENTORY: 'dlq.inventory-service',
-     // DLQ_SEARCH: 'dlq.search-service',
+     DLQ_SEARCH: 'dlq.search-service',
      DLQ_NOTIFICATION: 'dlq.notification-service',
 };
 
