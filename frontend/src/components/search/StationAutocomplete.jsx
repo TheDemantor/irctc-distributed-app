@@ -69,7 +69,7 @@ export default function StationAutocomplete({ label, value, onChange, placeholde
         </div>
       )}
       {open && suggestions.length > 0 && (
-        <ul className="absolute z-30 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+        <ul className="absolute z-30 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto text-gray-900">
           {suggestions.map((s) => (
             <li
               key={s.stationId || s.code}

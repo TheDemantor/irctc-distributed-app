@@ -1,63 +1,226 @@
-{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-22 18:32:19"}
-{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-22 18:32:21"}
-{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-22 18:32:21"}
-{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-22 18:32:23"}
-{"level":"info","message":"Deleted index: stations","service":"search-service","timestamp":"2026-10-22 18:35:36"}
-{"level":"info","message":"Deleted index: trains","service":"search-service","timestamp":"2026-10-22 18:35:36"}
-{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-22 18:35:37"}
-{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-22 18:35:38"}
-{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-22 18:35:38"}
-{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-22 18:35:39"}
-{"level":"info","message":"Deleted index: stations","service":"search-service","timestamp":"2026-10-22 18:48:46"}
-{"level":"info","message":"Deleted index: trains","service":"search-service","timestamp":"2026-10-22 18:48:46"}
-{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-22 18:48:47"}
-{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-22 18:48:47"}
-{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-22 18:48:47"}
-{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-22 18:48:51"}
-{"level":"info","message":"Deleted index: stations","service":"search-service","timestamp":"2026-10-22 18:52:17"}
-{"level":"info","message":"Deleted index: trains","service":"search-service","timestamp":"2026-10-22 18:52:17"}
-{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-22 18:52:18"}
-{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-22 18:52:19"}
-{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-22 18:52:19"}
-{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-22 18:52:20"}
-{"level":"info","message":"Search consumer connected","service":"search-service","timestamp":"2026-10-22 18:52:20"}
-{"level":"info","message":"Search consumer running...","service":"search-service","timestamp":"2026-10-22 18:52:31"}
-{"level":"info","message":"search-service running on http://localhost:4002","service":"search-service","timestamp":"2026-10-22 18:52:32"}
-{"level":"info","message":"Processing admin.route-created","offset":"0","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:36"}
-{"level":"info","message":"Indexed train 12259 with 2 stations","service":"search-service","timestamp":"2026-10-22 18:52:36"}
-{"level":"info","message":"Processing admin.route-created","offset":"1","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:37"}
-{"level":"info","message":"Indexed train 12951 with 3 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
-{"level":"info","message":"Processing admin.route-created","offset":"2","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:38"}
-{"level":"info","message":"Indexed train 12301 with 3 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
-{"level":"info","message":"Processing admin.route-created","offset":"3","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:38"}
-{"level":"info","message":"Indexed train 12002 with 3 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
-{"level":"info","message":"Processing admin.route-created","offset":"4","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:38"}
-{"level":"info","message":"Indexed train 12622 with 5 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
-{"level":"info","message":"Processing admin.route-created","offset":"5","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:38"}
-{"level":"info","message":"Indexed train 12626 with 2 stations","service":"search-service","timestamp":"2026-10-22 18:52:38"}
-{"level":"info","message":"Processing admin.station-created","offset":"0","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:40"}
-{"level":"info","message":"Indexed station Howrah Junction (HWH)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Processing admin.station-created","offset":"1","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Indexed station New Delhi Railway Station (NDLS)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Processing admin.station-created","offset":"2","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Indexed station Chhatrapati Shivaji Maharaj Terminus (CSMT)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Processing admin.station-created","offset":"3","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Indexed station Pune Junction (PUNE)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Processing admin.station-created","offset":"4","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Indexed station Bhopal Junction (BPL)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Processing admin.station-created","offset":"5","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Indexed station Chennai Central (MAS)","service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Processing admin.station-created","offset":"6","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:41"}
-{"level":"info","message":"Indexed station KSR Bengaluru (SBC)","service":"search-service","timestamp":"2026-10-22 18:52:42"}
-{"level":"info","message":"Processing admin.schedule-created","offset":"0","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:42"}
-{"level":"info","message":"Indexed schedule a475e6f4-ed07-4bcd-9a61-00d12b071597 for train a4ada108-451a-4487-913e-e8189987a27b","service":"search-service","timestamp":"2026-10-22 18:52:42"}
-{"level":"info","message":"Processing admin.schedule-created","offset":"1","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:42"}
-{"level":"info","message":"Indexed schedule faeb2489-4c7f-4100-b812-962e2650ef91 for train 12acd063-02f4-4654-839a-e5a57a44792a","service":"search-service","timestamp":"2026-10-22 18:52:43"}
-{"level":"info","message":"Processing admin.schedule-created","offset":"2","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:43"}
-{"level":"info","message":"Indexed schedule a4db2929-2df8-4459-a84d-d314ad373b97 for train 15395827-ff60-4f51-b3df-dd335a4b3cf8","service":"search-service","timestamp":"2026-10-22 18:52:43"}
-{"level":"info","message":"Processing admin.schedule-created","offset":"3","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:43"}
-{"level":"info","message":"Indexed schedule 14af44f4-b3d9-4b3f-af7f-c2e759cd97ab for train 29e2f430-cc13-4f9b-9ff6-9a1971d2c1d3","service":"search-service","timestamp":"2026-10-22 18:52:43"}
-{"level":"info","message":"Processing admin.schedule-created","offset":"4","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:43"}
-{"level":"info","message":"Indexed schedule 7fa37053-2724-4818-9c28-e60c4e37ef83 for train 73ef49bf-4e64-4597-a21a-78cb82ec9031","service":"search-service","timestamp":"2026-10-22 18:52:43"}
-{"level":"info","message":"Processing admin.schedule-created","offset":"5","partition":0,"service":"search-service","timestamp":"2026-10-22 18:52:43"}
-{"level":"info","message":"Indexed schedule e981d0cb-263d-4067-855d-145f1a28d451 for train ba0cb8ad-31c3-43d7-8bc4-1328c7495bd9","service":"search-service","timestamp":"2026-10-22 18:52:43"}
+{"level":"info","message":"Deleted index: stations","service":"search-service","timestamp":"2026-10-24 17:19:01"}
+{"level":"info","message":"Deleted index: trains","service":"search-service","timestamp":"2026-10-24 17:19:02"}
+{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-24 17:19:05"}
+{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-24 17:19:06"}
+{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-24 17:19:06"}
+{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-24 17:19:07"}
+{"level":"info","message":"Search consumer connected","service":"search-service","timestamp":"2026-10-24 17:19:07"}
+{"level":"info","message":"Search consumer running...","service":"search-service","timestamp":"2026-10-24 17:19:13"}
+{"level":"info","message":"search-service running on http://localhost:4002","service":"search-service","timestamp":"2026-10-24 17:19:13"}
+{"level":"debug","message":"[GET] /autocomplete?q=de","service":"search-service","timestamp":"2026-10-24 17:27:45"}
+{"level":"error","message":"other side closed - Local: ::1:49260, Remote: ::1:9200","method":"GET","path":"/autocomplete","query":{"q":"de"},"service":"search-service","stack":"ConnectionError: other side closed - Local: ::1:49260, Remote: ::1:9200\n    at SniffingTransport._request (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\transport\\lib\\Transport.js:639:31)\n    at async C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\transport\\lib\\Transport.js:699:32\n    at async SniffingTransport.request (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\transport\\lib\\Transport.js:695:20)\n    at async Client.SearchApi [as search] (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\elasticsearch\\lib\\api\\api\\search.js:73:12)\n    at async Object.autocompleteStation (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\src\\services\\search.service.js:319:21)\n    at async C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\src\\controllers\\search.controller.js:15:26","timestamp":"2026-10-24 17:27:55"}
+{"level":"info","message":"[GET] /autocomplete?q=de - status: 500 - 9866ms","service":"search-service","timestamp":"2026-10-24 17:27:55"}
+{"level":"debug","message":"[GET] /autocomplete?q=mu","service":"search-service","timestamp":"2026-10-24 17:30:48"}
+{"level":"error","message":"other side closed - Local: ::1:52282, Remote: ::1:9200","method":"GET","path":"/autocomplete","query":{"q":"mu"},"service":"search-service","stack":"ConnectionError: other side closed - Local: ::1:52282, Remote: ::1:9200\n    at SniffingTransport._request (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\transport\\lib\\Transport.js:639:31)\n    at async C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\transport\\lib\\Transport.js:699:32\n    at async SniffingTransport.request (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\transport\\lib\\Transport.js:695:20)\n    at async Client.SearchApi [as search] (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\elasticsearch\\lib\\api\\api\\search.js:73:12)\n    at async Object.autocompleteStation (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\src\\services\\search.service.js:319:21)\n    at async C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\src\\controllers\\search.controller.js:15:26","timestamp":"2026-10-24 17:31:19"}
+{"level":"info","message":"[GET] /autocomplete?q=mu - status: 500 - 31207ms","service":"search-service","timestamp":"2026-10-24 17:31:19"}
+{"level":"debug","message":"[GET] /autocomplete?q=bh","service":"search-service","timestamp":"2026-10-24 17:33:46"}
+{"level":"error","message":"other side closed - Local: ::1:59366, Remote: ::1:9200","method":"GET","path":"/autocomplete","query":{"q":"bh"},"service":"search-service","stack":"ConnectionError: other side closed - Local: ::1:59366, Remote: ::1:9200\n    at SniffingTransport._request (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\transport\\lib\\Transport.js:639:31)\n    at async C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\transport\\lib\\Transport.js:699:32\n    at async SniffingTransport.request (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\transport\\lib\\Transport.js:695:20)\n    at async Client.SearchApi [as search] (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\node_modules\\@elastic\\elasticsearch\\lib\\api\\api\\search.js:73:12)\n    at async Object.autocompleteStation (C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\src\\services\\search.service.js:319:21)\n    at async C:\\Users\\email\\OneDrive\\Desktop\\web-dev\\backend project\\irctc-backend-main\\irctc-distributed-application\\search-service\\src\\controllers\\search.controller.js:15:26","timestamp":"2026-10-24 17:33:54"}
+{"level":"info","message":"[GET] /autocomplete?q=bh - status: 500 - 7835ms","service":"search-service","timestamp":"2026-10-24 17:33:54"}
+{"level":"debug","message":"[GET] /autocomplete?q=bh","service":"search-service","timestamp":"2026-10-24 17:36:22"}
+{"level":"info","message":"[GET] /autocomplete?q=bh - status: 200 - 1930ms","service":"search-service","timestamp":"2026-10-24 17:36:24"}
+{"level":"debug","message":"[GET] /autocomplete?q=bho","service":"search-service","timestamp":"2026-10-24 17:36:29"}
+{"level":"info","message":"[GET] /autocomplete?q=bho - status: 200 - 42ms","service":"search-service","timestamp":"2026-10-24 17:36:29"}
+{"level":"debug","message":"[GET] /autocomplete?q=del","service":"search-service","timestamp":"2026-10-24 17:36:55"}
+{"level":"info","message":"[GET] /autocomplete?q=del - status: 200 - 57ms","service":"search-service","timestamp":"2026-10-24 17:36:55"}
+{"level":"debug","message":"[GET] /autocomplete?q=ba","service":"search-service","timestamp":"2026-10-24 17:50:18"}
+{"level":"info","message":"[GET] /autocomplete?q=ba - status: 200 - 611ms","service":"search-service","timestamp":"2026-10-24 17:50:19"}
+{"level":"debug","message":"[GET] /autocomplete?q=be","service":"search-service","timestamp":"2026-10-24 17:50:52"}
+{"level":"info","message":"[GET] /autocomplete?q=be - status: 200 - 121ms","service":"search-service","timestamp":"2026-10-24 17:50:52"}
+{"level":"debug","message":"[GET] /autocomplete?q=bengalu","service":"search-service","timestamp":"2026-10-24 17:51:09"}
+{"level":"info","message":"[GET] /autocomplete?q=bengalu - status: 200 - 45ms","service":"search-service","timestamp":"2026-10-24 17:51:09"}
+{"level":"debug","message":"[GET] /autocomplete?q=bengalur","service":"search-service","timestamp":"2026-10-24 17:51:10"}
+{"level":"info","message":"[GET] /autocomplete?q=bengalur - status: 200 - 39ms","service":"search-service","timestamp":"2026-10-24 17:51:10"}
+{"level":"debug","message":"[GET] /autocomplete?q=benga","service":"search-service","timestamp":"2026-10-24 17:53:08"}
+{"level":"info","message":"[GET] /autocomplete?q=benga - status: 200 - 223ms","service":"search-service","timestamp":"2026-10-24 17:53:08"}
+{"level":"debug","message":"[GET] /autocomplete?q=del","service":"search-service","timestamp":"2026-10-24 17:53:17"}
+{"level":"info","message":"[GET] /autocomplete?q=del - status: 304 - 90ms","service":"search-service","timestamp":"2026-10-24 17:53:17"}
+{"level":"debug","message":"[GET] /autocomplete?q=delhi","service":"search-service","timestamp":"2026-10-24 17:53:18"}
+{"level":"info","message":"[GET] /autocomplete?q=delhi - status: 200 - 106ms","service":"search-service","timestamp":"2026-10-24 17:53:18"}
+{"level":"debug","message":"[GET] /autocomplete?q=de","service":"search-service","timestamp":"2026-10-24 17:53:43"}
+{"level":"info","message":"[GET] /autocomplete?q=de - status: 200 - 238ms","service":"search-service","timestamp":"2026-10-24 17:53:44"}
+{"level":"info","message":"Shutting down...","service":"search-service","timestamp":"2026-10-24 17:53:50"}
+{"level":"info","message":"Deleted index: stations","service":"search-service","timestamp":"2026-10-24 17:54:03"}
+{"level":"info","message":"Deleted index: trains","service":"search-service","timestamp":"2026-10-24 17:54:04"}
+{"level":"info","message":"Station index created","service":"search-service","timestamp":"2026-10-24 17:54:06"}
+{"level":"info","message":"Train index created","service":"search-service","timestamp":"2026-10-24 17:54:07"}
+{"level":"info","message":"All indices recreated","service":"search-service","timestamp":"2026-10-24 17:54:07"}
+{"level":"info","message":"Kafka producer connected (DLQ)","service":"search-service","timestamp":"2026-10-24 17:54:07"}
+{"level":"info","message":"Search consumer connected","service":"search-service","timestamp":"2026-10-24 17:54:07"}
+{"level":"info","message":"Search consumer running...","service":"search-service","timestamp":"2026-10-24 17:54:11"}
+{"level":"info","message":"search-service running on http://localhost:4002","service":"search-service","timestamp":"2026-10-24 17:54:11"}
+{"level":"info","message":"Processing admin.station-created","offset":"7","partition":0,"service":"search-service","timestamp":"2026-10-24 17:54:12"}
+{"level":"info","message":"Indexed station Bengaluru Junction (BLR)","service":"search-service","timestamp":"2026-10-24 17:54:14"}
+{"level":"debug","message":"[GET] /autocomplete?q=deben","service":"search-service","timestamp":"2026-10-24 17:54:25"}
+{"level":"info","message":"[GET] /autocomplete?q=deben - status: 200 - 202ms","service":"search-service","timestamp":"2026-10-24 17:54:25"}
+{"level":"debug","message":"[GET] /autocomplete?q=debeng","service":"search-service","timestamp":"2026-10-24 17:54:28"}
+{"level":"info","message":"[GET] /autocomplete?q=debeng - status: 200 - 33ms","service":"search-service","timestamp":"2026-10-24 17:54:28"}
+{"level":"debug","message":"[GET] /autocomplete?q=debenga","service":"search-service","timestamp":"2026-10-24 17:54:29"}
+{"level":"info","message":"[GET] /autocomplete?q=debenga - status: 200 - 31ms","service":"search-service","timestamp":"2026-10-24 17:54:29"}
+{"level":"debug","message":"[GET] /autocomplete?q=be","service":"search-service","timestamp":"2026-10-24 17:54:44"}
+{"level":"debug","message":"[GET] /autocomplete?q=bem","service":"search-service","timestamp":"2026-10-24 17:54:44"}
+{"level":"info","message":"[GET] /autocomplete?q=bem - status: 200 - 59ms","service":"search-service","timestamp":"2026-10-24 17:54:44"}
+{"level":"info","message":"[GET] /autocomplete?q=be - status: 200 - 393ms","service":"search-service","timestamp":"2026-10-24 17:54:44"}
+{"level":"debug","message":"[GET] /autocomplete?q=de","service":"search-service","timestamp":"2026-10-24 17:56:47"}
+{"level":"debug","message":"[GET] /autocomplete?q=depun","service":"search-service","timestamp":"2026-10-24 17:56:47"}
+{"level":"info","message":"[GET] /autocomplete?q=depun - status: 200 - 105ms","service":"search-service","timestamp":"2026-10-24 17:56:48"}
+{"level":"info","message":"[GET] /autocomplete?q=de - status: 304 - 1047ms","service":"search-service","timestamp":"2026-10-24 17:56:48"}
+{"level":"debug","message":"[GET] /autocomplete?q=pune","service":"search-service","timestamp":"2026-10-24 17:56:58"}
+{"level":"info","message":"[GET] /autocomplete?q=pune - status: 200 - 34ms","service":"search-service","timestamp":"2026-10-24 17:56:58"}
+{"level":"info","message":"Processing admin.station-created","offset":"8","partition":0,"service":"search-service","timestamp":"2026-10-24 17:58:37"}
+{"level":"info","message":"Indexed station Pune Junction2 (PNJ)","service":"search-service","timestamp":"2026-10-24 17:58:38"}
+{"level":"info","message":"Processing admin.station-created","offset":"9","partition":0,"service":"search-service","timestamp":"2026-10-24 17:59:03"}
+{"level":"info","message":"Indexed station Bhopal Junction 2 (BPJ)","service":"search-service","timestamp":"2026-10-24 17:59:04"}
+{"level":"info","message":"Processing admin.station-created","offset":"10","partition":0,"service":"search-service","timestamp":"2026-10-24 17:59:27"}
+{"level":"info","message":"Indexed station Kanpur Central Junction (KNP)","service":"search-service","timestamp":"2026-10-24 17:59:27"}
+{"level":"info","message":"Processing admin.station-created","offset":"11","partition":0,"service":"search-service","timestamp":"2026-10-24 18:00:19"}
+{"level":"info","message":"Indexed station Howrah 2 (HWJ)","service":"search-service","timestamp":"2026-10-24 18:00:20"}
+{"level":"info","message":"Processing admin.station-created","offset":"12","partition":0,"service":"search-service","timestamp":"2026-10-24 18:00:38"}
+{"level":"info","message":"Indexed station Chennai Junction (CSK)","service":"search-service","timestamp":"2026-10-24 18:00:38"}
+{"level":"info","message":"Processing admin.station-created","offset":"13","partition":0,"service":"search-service","timestamp":"2026-10-24 18:00:59"}
+{"level":"info","message":"Indexed station KSR Bengaluru 2 (SBJ)","service":"search-service","timestamp":"2026-10-24 18:00:59"}
+{"level":"debug","message":"[GET] /autocomplete?q=ben","service":"search-service","timestamp":"2026-10-24 18:01:07"}
+{"level":"info","message":"[GET] /autocomplete?q=ben - status: 200 - 199ms","service":"search-service","timestamp":"2026-10-24 18:01:07"}
+{"level":"debug","message":"[GET] /autocomplete?q=SBJ","service":"search-service","timestamp":"2026-10-24 18:01:21"}
+{"level":"info","message":"[GET] /autocomplete?q=SBJ - status: 200 - 48ms","service":"search-service","timestamp":"2026-10-24 18:01:21"}
+{"level":"debug","message":"[GET] /autocomplete?q=bemd","service":"search-service","timestamp":"2026-10-24 18:01:22"}
+{"level":"info","message":"[GET] /autocomplete?q=bemd - status: 200 - 37ms","service":"search-service","timestamp":"2026-10-24 18:01:22"}
+{"level":"debug","message":"[GET] /autocomplete?q=de","service":"search-service","timestamp":"2026-10-24 18:01:24"}
+{"level":"info","message":"[GET] /autocomplete?q=de - status: 304 - 27ms","service":"search-service","timestamp":"2026-10-24 18:01:24"}
+{"level":"debug","message":"[GET] /autocomplete?q=del","service":"search-service","timestamp":"2026-10-24 18:01:25"}
+{"level":"info","message":"[GET] /autocomplete?q=del - status: 304 - 30ms","service":"search-service","timestamp":"2026-10-24 18:01:25"}
+{"level":"debug","message":"[GET] /autocomplete?q=pun","service":"search-service","timestamp":"2026-10-24 18:01:40"}
+{"level":"info","message":"[GET] /autocomplete?q=pun - status: 200 - 47ms","service":"search-service","timestamp":"2026-10-24 18:01:40"}
+{"level":"debug","message":"[GET] /autocomplete?q=PNJ","service":"search-service","timestamp":"2026-10-24 18:01:42"}
+{"level":"info","message":"[GET] /autocomplete?q=PNJ - status: 200 - 60ms","service":"search-service","timestamp":"2026-10-24 18:01:42"}
+{"level":"debug","message":"[GET] /autocomplete?q=Pune%20Junction2%20(PNJ)","service":"search-service","timestamp":"2026-10-24 18:01:43"}
+{"level":"info","message":"[GET] /autocomplete?q=Pune%20Junction2%20(PNJ) - status: 200 - 73ms","service":"search-service","timestamp":"2026-10-24 18:01:43"}
+{"level":"debug","message":"[GET] /trains?from=SBJ&to=PNJ&date=2026-10-24","service":"search-service","timestamp":"2026-10-24 18:01:52"}
+{"level":"info","message":"[GET] /trains?from=SBJ&to=PNJ&date=2026-10-24 - status: 200 - 1983ms","service":"search-service","timestamp":"2026-10-24 18:01:54"}
+{"level":"debug","message":"[GET] /autocomplete?q=SBJ","service":"search-service","timestamp":"2026-10-24 18:01:54"}
+{"level":"debug","message":"[GET] /autocomplete?q=PNJ","service":"search-service","timestamp":"2026-10-24 18:01:54"}
+{"level":"info","message":"[GET] /autocomplete?q=SBJ - status: 304 - 62ms","service":"search-service","timestamp":"2026-10-24 18:01:54"}
+{"level":"info","message":"[GET] /autocomplete?q=PNJ - status: 304 - 55ms","service":"search-service","timestamp":"2026-10-24 18:01:54"}
+{"level":"debug","message":"[GET] /autocomplete?q=SBJ","service":"search-service","timestamp":"2026-10-24 18:01:54"}
+{"level":"debug","message":"[GET] /autocomplete?q=PNJ","service":"search-service","timestamp":"2026-10-24 18:01:54"}
+{"level":"info","message":"[GET] /autocomplete?q=SBJ - status: 304 - 79ms","service":"search-service","timestamp":"2026-10-24 18:01:54"}
+{"level":"info","message":"[GET] /autocomplete?q=PNJ - status: 304 - 71ms","service":"search-service","timestamp":"2026-10-24 18:01:54"}
+{"level":"debug","message":"[GET] /autocomplete?q=KSR%20Bengaluru%202%20(SBJ)","service":"search-service","timestamp":"2026-10-24 18:02:12"}
+{"level":"info","message":"[GET] /autocomplete?q=KSR%20Bengaluru%202%20(SBJ) - status: 200 - 51ms","service":"search-service","timestamp":"2026-10-24 18:02:12"}
+{"level":"debug","message":"[GET] /autocomplete?q=Pune%20Junction2%20(PNJ)","service":"search-service","timestamp":"2026-10-24 18:02:14"}
+{"level":"info","message":"[GET] /autocomplete?q=Pune%20Junction2%20(PNJ) - status: 304 - 48ms","service":"search-service","timestamp":"2026-10-24 18:02:14"}
+{"level":"debug","message":"[GET] /trains?from=SBJ&to=PNJ&date=2026-10-24","service":"search-service","timestamp":"2026-10-24 18:02:16"}
+{"level":"info","message":"[GET] /trains?from=SBJ&to=PNJ&date=2026-10-24 - status: 304 - 85ms","service":"search-service","timestamp":"2026-10-24 18:02:16"}
+{"level":"debug","message":"[GET] /autocomplete?q=beng","service":"search-service","timestamp":"2026-10-24 18:49:08"}
+{"level":"info","message":"[GET] /autocomplete?q=beng - status: 200 - 649ms","service":"search-service","timestamp":"2026-10-24 18:49:09"}
+{"level":"debug","message":"[GET] /autocomplete?q=BLR","service":"search-service","timestamp":"2026-10-24 18:49:11"}
+{"level":"info","message":"[GET] /autocomplete?q=BLR - status: 200 - 37ms","service":"search-service","timestamp":"2026-10-24 18:49:11"}
+{"level":"debug","message":"[GET] /autocomplete?q=pun","service":"search-service","timestamp":"2026-10-24 18:49:13"}
+{"level":"info","message":"[GET] /autocomplete?q=pun - status: 304 - 31ms","service":"search-service","timestamp":"2026-10-24 18:49:13"}
+{"level":"debug","message":"[GET] /autocomplete?q=PNJ","service":"search-service","timestamp":"2026-10-24 18:49:14"}
+{"level":"info","message":"[GET] /autocomplete?q=PNJ - status: 304 - 31ms","service":"search-service","timestamp":"2026-10-24 18:49:14"}
+{"level":"debug","message":"[GET] /trains?from=BLR&to=PNJ&date=2026-10-24","service":"search-service","timestamp":"2026-10-24 18:49:17"}
+{"level":"info","message":"[GET] /trains?from=BLR&to=PNJ&date=2026-10-24 - status: 200 - 145ms","service":"search-service","timestamp":"2026-10-24 18:49:17"}
+{"level":"debug","message":"[GET] /trains?from=BLR&to=PNJ&date=2026-10-24","service":"search-service","timestamp":"2026-10-24 18:49:40"}
+{"level":"info","message":"[GET] /trains?from=BLR&to=PNJ&date=2026-10-24 - status: 304 - 52ms","service":"search-service","timestamp":"2026-10-24 18:49:40"}
+{"level":"info","message":"Processing admin.station-created","offset":"14","partition":0,"service":"search-service","timestamp":"2026-10-24 18:54:10"}
+{"level":"info","message":"Indexed station Chinchwad (CHW)","service":"search-service","timestamp":"2026-10-24 18:54:11"}
+{"level":"info","message":"Processing admin.station-created","offset":"15","partition":0,"service":"search-service","timestamp":"2026-10-24 18:54:41"}
+{"level":"info","message":"Indexed station Kochi (KOC)","service":"search-service","timestamp":"2026-10-24 18:54:41"}
+{"level":"info","message":"Processing admin.route-created","offset":"6","partition":0,"service":"search-service","timestamp":"2026-10-24 18:57:20"}
+{"level":"info","message":"Indexed train 12627 with 3 stations","service":"search-service","timestamp":"2026-10-24 18:57:23"}
+{"level":"debug","message":"[GET] /autocomplete?q=Bengaluru%20Junction%20(BLR)","service":"search-service","timestamp":"2026-10-24 18:57:37"}
+{"level":"info","message":"[GET] /autocomplete?q=Bengaluru%20Junction%20(BLR) - status: 200 - 155ms","service":"search-service","timestamp":"2026-10-24 18:57:37"}
+{"level":"debug","message":"[GET] /autocomplete?q=pune","service":"search-service","timestamp":"2026-10-24 18:57:42"}
+{"level":"info","message":"[GET] /autocomplete?q=pune - status: 200 - 44ms","service":"search-service","timestamp":"2026-10-24 18:57:42"}
+{"level":"debug","message":"[GET] /autocomplete?q=CHW","service":"search-service","timestamp":"2026-10-24 18:57:44"}
+{"level":"info","message":"[GET] /autocomplete?q=CHW - status: 200 - 42ms","service":"search-service","timestamp":"2026-10-24 18:57:44"}
+{"level":"debug","message":"[GET] /autocomplete?q=Chinchwad%20(CHW)","service":"search-service","timestamp":"2026-10-24 18:57:46"}
+{"level":"info","message":"[GET] /autocomplete?q=Chinchwad%20(CHW) - status: 200 - 37ms","service":"search-service","timestamp":"2026-10-24 18:57:46"}
+{"level":"debug","message":"[GET] /trains?from=BLR&to=CHW&date=2026-10-24","service":"search-service","timestamp":"2026-10-24 18:57:47"}
+{"level":"info","message":"[GET] /trains?from=BLR&to=CHW&date=2026-10-24 - status: 200 - 146ms","service":"search-service","timestamp":"2026-10-24 18:57:47"}
+{"level":"debug","message":"[GET] /autocomplete?q=Bengaluru%20Junction%20(BLR","service":"search-service","timestamp":"2026-10-24 18:57:51"}
+{"level":"info","message":"[GET] /autocomplete?q=Bengaluru%20Junction%20(BLR - status: 200 - 69ms","service":"search-service","timestamp":"2026-10-24 18:57:51"}
+{"level":"debug","message":"[GET] /autocomplete?q=ko","service":"search-service","timestamp":"2026-10-24 18:57:53"}
+{"level":"info","message":"[GET] /autocomplete?q=ko - status: 200 - 46ms","service":"search-service","timestamp":"2026-10-24 18:57:53"}
+{"level":"debug","message":"[GET] /autocomplete?q=KOC","service":"search-service","timestamp":"2026-10-24 18:57:55"}
+{"level":"info","message":"[GET] /autocomplete?q=KOC - status: 200 - 43ms","service":"search-service","timestamp":"2026-10-24 18:57:56"}
+{"level":"debug","message":"[GET] /trains?from=KOC&to=CHW&date=2026-10-24","service":"search-service","timestamp":"2026-10-24 18:57:56"}
+{"level":"info","message":"[GET] /trains?from=KOC&to=CHW&date=2026-10-24 - status: 200 - 867ms","service":"search-service","timestamp":"2026-10-24 18:57:57"}
+{"level":"debug","message":"[GET] /autocomplete?q=ko","service":"search-service","timestamp":"2026-10-24 18:58:05"}
+{"level":"info","message":"[GET] /autocomplete?q=ko - status: 304 - 126ms","service":"search-service","timestamp":"2026-10-24 18:58:05"}
+{"level":"debug","message":"[GET] /autocomplete?q=pu","service":"search-service","timestamp":"2026-10-24 18:58:07"}
+{"level":"info","message":"[GET] /autocomplete?q=pu - status: 200 - 31ms","service":"search-service","timestamp":"2026-10-24 18:58:07"}
+{"level":"debug","message":"[GET] /autocomplete?q=CHW","service":"search-service","timestamp":"2026-10-24 18:58:09"}
+{"level":"info","message":"[GET] /autocomplete?q=CHW - status: 304 - 37ms","service":"search-service","timestamp":"2026-10-24 18:58:09"}
+{"level":"debug","message":"[GET] /autocomplete?q=ko","service":"search-service","timestamp":"2026-10-24 18:58:10"}
+{"level":"info","message":"[GET] /autocomplete?q=ko - status: 304 - 41ms","service":"search-service","timestamp":"2026-10-24 18:58:10"}
+{"level":"debug","message":"[GET] /autocomplete?q=koch","service":"search-service","timestamp":"2026-10-24 18:58:11"}
+{"level":"info","message":"[GET] /autocomplete?q=koch - status: 200 - 48ms","service":"search-service","timestamp":"2026-10-24 18:58:11"}
+{"level":"debug","message":"[GET] /autocomplete?q=KOC","service":"search-service","timestamp":"2026-10-24 18:58:12"}
+{"level":"info","message":"[GET] /autocomplete?q=KOC - status: 304 - 42ms","service":"search-service","timestamp":"2026-10-24 18:58:12"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 18:58:14"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 200 - 143ms","service":"search-service","timestamp":"2026-10-24 18:58:14"}
+{"level":"info","message":"Processing admin.schedule-created","offset":"6","partition":0,"service":"search-service","timestamp":"2026-10-24 18:58:49"}
+{"level":"info","message":"Indexed schedule 7a9245f6-e6d8-46f6-8fbf-262ce645c9a9 for train f0a234e9-a4a8-4dbe-8700-5d5adab62c45","service":"search-service","timestamp":"2026-10-24 18:58:55"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 18:59:06"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 231ms","service":"search-service","timestamp":"2026-10-24 18:59:07"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 18:59:10"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 226ms","service":"search-service","timestamp":"2026-10-24 18:59:10"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 18:59:11"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 93ms","service":"search-service","timestamp":"2026-10-24 18:59:11"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 18:59:11"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 109ms","service":"search-service","timestamp":"2026-10-24 18:59:11"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 18:59:11"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 156ms","service":"search-service","timestamp":"2026-10-24 18:59:11"}
+{"level":"debug","message":"[GET] /autocomplete?q=pune","service":"search-service","timestamp":"2026-10-24 18:59:33"}
+{"level":"info","message":"[GET] /autocomplete?q=pune - status: 304 - 110ms","service":"search-service","timestamp":"2026-10-24 18:59:34"}
+{"level":"debug","message":"[GET] /autocomplete?q=CHW","service":"search-service","timestamp":"2026-10-24 18:59:36"}
+{"level":"info","message":"[GET] /autocomplete?q=CHW - status: 304 - 38ms","service":"search-service","timestamp":"2026-10-24 18:59:36"}
+{"level":"debug","message":"[GET] /autocomplete?q=koch","service":"search-service","timestamp":"2026-10-24 18:59:37"}
+{"level":"info","message":"[GET] /autocomplete?q=koch - status: 304 - 44ms","service":"search-service","timestamp":"2026-10-24 18:59:38"}
+{"level":"debug","message":"[GET] /autocomplete?q=KOC","service":"search-service","timestamp":"2026-10-24 18:59:39"}
+{"level":"info","message":"[GET] /autocomplete?q=KOC - status: 304 - 58ms","service":"search-service","timestamp":"2026-10-24 18:59:39"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 18:59:39"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 151ms","service":"search-service","timestamp":"2026-10-24 18:59:40"}
+{"level":"info","message":"Processing admin.schedule-created","offset":"7","partition":0,"service":"search-service","timestamp":"2026-10-24 19:00:21"}
+{"level":"info","message":"Indexed schedule 8297e1d6-9746-4a58-8ef5-202aca0ae4ee for train f0a234e9-a4a8-4dbe-8700-5d5adab62c45","service":"search-service","timestamp":"2026-10-24 19:00:24"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 19:00:27"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 244ms","service":"search-service","timestamp":"2026-10-24 19:00:27"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 19:00:28"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 146ms","service":"search-service","timestamp":"2026-10-24 19:00:28"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 19:00:29"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 112ms","service":"search-service","timestamp":"2026-10-24 19:00:29"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 19:00:29"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 133ms","service":"search-service","timestamp":"2026-10-24 19:00:30"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 19:00:30"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 102ms","service":"search-service","timestamp":"2026-10-24 19:00:30"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 19:00:30"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 119ms","service":"search-service","timestamp":"2026-10-24 19:00:30"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 19:00:31"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 86ms","service":"search-service","timestamp":"2026-10-24 19:00:31"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC","service":"search-service","timestamp":"2026-10-24 19:00:47"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC - status: 304 - 97ms","service":"search-service","timestamp":"2026-10-24 19:00:47"}
+{"level":"debug","message":"[GET] /trains?from=CHW&to=KOC&date=2026-10-30","service":"search-service","timestamp":"2026-10-24 19:00:50"}
+{"level":"info","message":"[GET] /trains?from=CHW&to=KOC&date=2026-10-30 - status: 200 - 111ms","service":"search-service","timestamp":"2026-10-24 19:00:50"}
+{"level":"debug","message":"[GET] /autocomplete?q=CHW","service":"search-service","timestamp":"2026-10-24 19:00:56"}
+{"level":"debug","message":"[GET] /autocomplete?q=KOC","service":"search-service","timestamp":"2026-10-24 19:00:56"}
+{"level":"info","message":"[GET] /autocomplete?q=CHW - status: 304 - 116ms","service":"search-service","timestamp":"2026-10-24 19:00:56"}
+{"level":"info","message":"[GET] /autocomplete?q=KOC - status: 304 - 95ms","service":"search-service","timestamp":"2026-10-24 19:00:56"}
+{"level":"debug","message":"[GET] /autocomplete?q=CHW","service":"search-service","timestamp":"2026-10-24 19:00:56"}
+{"level":"debug","message":"[GET] /autocomplete?q=KOC","service":"search-service","timestamp":"2026-10-24 19:00:56"}
+{"level":"info","message":"[GET] /autocomplete?q=CHW - status: 304 - 51ms","service":"search-service","timestamp":"2026-10-24 19:00:56"}
+{"level":"info","message":"[GET] /autocomplete?q=KOC - status: 304 - 73ms","service":"search-service","timestamp":"2026-10-24 19:00:56"}
+{"level":"debug","message":"[GET] /autocomplete?q=cbbndgndn","service":"search-service","timestamp":"2026-10-24 19:02:30"}
+{"level":"debug","message":"[GET] /autocomplete?q=cb","service":"search-service","timestamp":"2026-10-24 19:02:31"}
+{"level":"info","message":"[GET] /autocomplete?q=cbbndgndn - status: 200 - 2294ms","service":"search-service","timestamp":"2026-10-24 19:02:32"}
+{"level":"info","message":"[GET] /autocomplete?q=cb - status: 200 - 1035ms","service":"search-service","timestamp":"2026-10-24 19:02:32"}
+{"level":"debug","message":"[GET] /autocomplete?q=pune","service":"search-service","timestamp":"2026-10-24 19:02:35"}
+{"level":"info","message":"[GET] /autocomplete?q=pune - status: 304 - 116ms","service":"search-service","timestamp":"2026-10-24 19:02:35"}
+{"level":"debug","message":"[GET] /autocomplete?q=pune","service":"search-service","timestamp":"2026-10-24 19:02:55"}
+{"level":"info","message":"[GET] /autocomplete?q=pune - status: 304 - 293ms","service":"search-service","timestamp":"2026-10-24 19:02:56"}
+{"level":"debug","message":"[GET] /autocomplete?q=kochi","service":"search-service","timestamp":"2026-10-24 19:02:58"}
+{"level":"info","message":"[GET] /autocomplete?q=kochi - status: 200 - 40ms","service":"search-service","timestamp":"2026-10-24 19:02:58"}
+{"level":"debug","message":"[GET] /autocomplete?q=ch","service":"search-service","timestamp":"2026-10-24 19:06:11"}
+{"level":"info","message":"[GET] /autocomplete?q=ch - status: 200 - 524ms","service":"search-service","timestamp":"2026-10-24 19:06:12"}
+{"level":"debug","message":"[GET] /autocomplete?q=CHW","service":"search-service","timestamp":"2026-10-24 19:06:15"}
+{"level":"info","message":"[GET] /autocomplete?q=CHW - status: 304 - 39ms","service":"search-service","timestamp":"2026-10-24 19:06:15"}
