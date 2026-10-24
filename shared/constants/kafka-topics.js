@@ -33,7 +33,7 @@ const KAFKA_TOPICS = {
 
      // // Dead-letter queues (per service — poison messages land here)
      // DLQ_BOOKING: 'dlq.booking-service',
-     // DLQ_INVENTORY: 'dlq.inventory-service',
+     DLQ_INVENTORY: 'dlq.inventory-service',
      DLQ_SEARCH: 'dlq.search-service',
      DLQ_NOTIFICATION: 'dlq.notification-service',
 };
