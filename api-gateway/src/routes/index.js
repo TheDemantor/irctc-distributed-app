@@ -124,19 +124,19 @@ router.put(
 // // ===========================
 // // SEARCH SERVICE ROUTES (public - no auth required)
 // // ===========================
-// const searchServiceProxy = createProxy('searchService', config.SERVICES.SEARCH_SERVICE_URL);
+const searchServiceProxy = createProxy('searchService', config.SERVICES.SEARCH_SERVICE_URL);
 
-// router.get(
-//      '/search/trains',
-//      endpointRateLimit(60, 60000), // 60 requests per minute
-//      searchServiceProxy
-// );
+router.get(
+     '/search/trains',
+     endpointRateLimit(60, 60000), // 60 requests per minute
+     searchServiceProxy
+);
 
-// router.get(
-//      '/search/autocomplete',
-//      endpointRateLimit(120, 60000), // 120 requests per minute
-//      searchServiceProxy
-// );
+router.get(
+     '/search/autocomplete',
+     endpointRateLimit(120, 60000), // 120 requests per minute
+     searchServiceProxy
+);
 
 // // ===========================
 // // INVENTORY SERVICE ROUTES (public read-only)
