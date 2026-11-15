@@ -22,17 +22,17 @@ const KAFKA_TOPICS = {
      // // Inventory topics (inventory-service -> search-service)
      SEAT_AVAILABILITY_UPDATED: 'inventory.seat-availability-updated',
 
-     // // Booking topics (booking-service -> notification-service)
-     // BOOKING_CONFIRMED: 'booking.confirmed',
-     // BOOKING_CANCELLED: 'booking.cancelled',
-     // BOOKING_FAILED: 'booking.failed',
+     // Booking topics (booking-service -> notification-service)
+     BOOKING_CONFIRMED: 'booking.confirmed',
+     BOOKING_CANCELLED: 'booking.cancelled',
+     BOOKING_FAILED: 'booking.failed',
 
-     // // Payment topics (payment-service -> booking-service)
-     // PAYMENT_SUCCESS: 'payment.success',
-     // PAYMENT_FAILED: 'payment.failed',
+     // Payment topics (payment-service -> booking-service)
+     PAYMENT_SUCCESS: 'payment.success',
+     PAYMENT_FAILED: 'payment.failed',
 
-     // // Dead-letter queues (per service — poison messages land here)
-     // DLQ_BOOKING: 'dlq.booking-service',
+     // Dead-letter queues (per service — poison messages land here)
+     DLQ_BOOKING: 'dlq.booking-service',
      DLQ_INVENTORY: 'dlq.inventory-service',
      DLQ_SEARCH: 'dlq.search-service',
      DLQ_NOTIFICATION: 'dlq.notification-service',
