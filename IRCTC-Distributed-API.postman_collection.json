@@ -1,0 +1,198 @@
+{
+  "info": {
+    "name": "IRCTC Distributed Backend API",
+    "description": "Coverage for every registered route in api-gateway and the user, admin, search, inventory, booking, and payment services. Configure all URLs and internalServiceKey first. Run Direct User Service > Send OTP and Verify OTP (replace otp with the emailed code); the test script stores the returned userId. Then run the non-destructive Direct Admin Service setup requests in this order: Create origin station, Create destination station, Create train, Create route, Create schedule. Do not run the entire collection as one batch: requests have prerequisites and several are destructive or financial. Gateway private routes require a valid access-token cookie (run Gateway > Auth > Login first). Payment/webhook success requires valid Razorpay configuration/signatures and real IDs. Direct service-only routes intentionally bypass the gateway. Destructive and financial requests are labelled.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "if (pm.info.requestName === 'Google auth (gateway proxy)') { pm.test('Current user-service has no Google auth route (expected 404)', function () { pm.expect(pm.response.code).to.eql(404); }); } else { pm.test('HTTP request succeeded (2xx)', function () { pm.expect(pm.response.code).to.be.within(200, 299); }); }",
+          "let body; try { body = pm.response.json(); } catch (_) { body = null; }",
+          "const name = pm.info.requestName;",
+          "if (body && body.data && body.data.id) {",
+          "  if (name === 'Verify OTP') pm.collectionVariables.set('userId', body.data.id);",
+          "  if (name === 'Create origin station') pm.collectionVariables.set('originStationId', body.data.id);",
+          "  if (name === 'Create destination station') pm.collectionVariables.set('destinationStationId', body.data.id);",
+          "  if (name === 'Create train') {",
+          "    pm.collectionVariables.set('trainId', body.data.id);",
+          "    const seats = body.data.seats || [];",
+          "    if (seats[0]) pm.collectionVariables.set('seatId', seats[0].id);",
+          "    if (seats[1]) pm.collectionVariables.set('seatId2', seats[1].id);",
+          "  }",
+          "  if (name === 'Create schedule') pm.collectionVariables.set('scheduleId', body.data.id);",
+          "}"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    { "key": "gatewayUrl", "value": "http://localhost:4000/api" },
+    { "key": "userServiceUrl", "value": "http://localhost:4001" },
+    { "key": "searchServiceUrl", "value": "http://localhost:4002" },
+    { "key": "adminServiceUrl", "value": "http://localhost:4003" },
+    { "key": "bookingServiceUrl", "value": "http://localhost:4005" },
+    { "key": "paymentServiceUrl", "value": "http://localhost:4006" },
+    { "key": "inventoryServiceUrl", "value": "http://localhost:4007" },
+    { "key": "internalServiceKey", "value": "" },
+    { "key": "userId", "value": "" },
+    { "key": "email", "value": "test@example.com" },
+    { "key": "password", "value": "ChangeMe123!" },
+    { "key": "otp", "value": "000000" },
+    { "key": "googleIdToken", "value": "replace-with-a-valid-google-id-token" },
+    { "key": "originStationId", "value": "" },
+    { "key": "destinationStationId", "value": "" },
+    { "key": "trainId", "value": "" },
+    { "key": "scheduleId", "value": "" },
+    { "key": "seatId", "value": "" },
+    { "key": "seatId2", "value": "" },
+    { "key": "bookingId", "value": "replace-with-booking-id" },
+    { "key": "inventoryBookingId", "value": "postman-inventory-test-booking" },
+    { "key": "paymentOrderId", "value": "replace-with-payment-order-id" },
+    { "key": "gatewayPaymentId", "value": "replace-with-real-gateway-payment-id" },
+    { "key": "gatewaySignature", "value": "replace-with-real-gateway-payment-signature" },
+    { "key": "razorpayWebhookSignature", "value": "replace-with-valid-razorpay-webhook-signature" }
+  ],
+  "item": [
+    {
+      "name": "Gateway",
+      "item": [
+        {
+          "name": "Auth",
+          "item": [
+            { "name": "Send OTP", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Tester\",\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\",\n  \"confirmPassword\": \"{{password}}\"\n}" }, "url": "{{gatewayUrl}}/users/auth/send-otp" } },
+            { "name": "Verify OTP", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"otp\": \"{{otp}}\"\n}" }, "url": "{{gatewayUrl}}/users/auth/verify-otp" } },
+            { "name": "Login", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}" }, "url": "{{gatewayUrl}}/users/auth/login" } },
+            { "name": "Google auth (gateway proxy)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"idToken\": \"{{googleIdToken}}\"\n}" }, "url": "{{gatewayUrl}}/users/auth/google-auth", "description": "The gateway registers this proxy route, but the current user-service auth router has no /google-auth handler; use this request to verify the current 404/proxy behavior unless that handler is added." } },
+            { "name": "Refresh token", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{}" }, "url": "{{gatewayUrl}}/users/auth/refresh", "description": "Uses the refreshToken HttpOnly cookie set by Login. Postman must retain cookies for localhost." } }
+          ]
+        },
+        {
+          "name": "User profile (authenticated)",
+          "item": [
+            { "name": "Get profile", "request": { "method": "GET", "url": "{{gatewayUrl}}/users/user/profile", "description": "Requires a valid accessToken cookie from Login." } },
+            { "name": "Update profile", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Updated\"\n}" }, "url": "{{gatewayUrl}}/users/user/profile" } },
+            { "name": "Delete profile (destructive)", "request": { "method": "DELETE", "url": "{{gatewayUrl}}/users/user/profile", "description": "Destructively deletes the logged-in user. Run only against a disposable test account." } }
+          ]
+        },
+        {
+          "name": "Admin proxy (authenticated)",
+          "item": [
+            { "name": "Create station", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Gateway Test Station {{$timestamp}}\",\n  \"code\": \"GW{{$timestamp}}\",\n  \"city\": \"Test City\",\n  \"state\": \"Test State\"\n}" }, "url": "{{gatewayUrl}}/admins/stations/station" } },
+            { "name": "List stations", "request": { "method": "GET", "url": "{{gatewayUrl}}/admins/stations/station" } },
+            { "name": "Create train", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"trainNumber\": \"GW{{$timestamp}}\",\n  \"trainName\": \"Gateway Postman Test Train\",\n  \"coachName\": \"AC\",\n  \"seats\": [\n    { \"seatNumber\": 1, \"seatType\": \"LOWER\", \"price\": 500 },\n    { \"seatNumber\": 2, \"seatType\": \"UPPER\", \"price\": 500 }\n  ]\n}" }, "url": "{{gatewayUrl}}/admins/trains/train" } },
+            { "name": "Get train by ID", "request": { "method": "GET", "url": "{{gatewayUrl}}/admins/trains/train/{{trainId}}" } },
+            { "name": "Create train route", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"trainId\": \"{{trainId}}\",\n  \"stations\": [\n    { \"stationId\": \"{{originStationId}}\", \"sequenceNumber\": 1, \"arrivalTime\": null, \"departureTime\": \"08:00\", \"distanceFromOrigin\": 0 },\n    { \"stationId\": \"{{destinationStationId}}\", \"sequenceNumber\": 2, \"arrivalTime\": \"12:00\", \"departureTime\": null, \"distanceFromOrigin\": 250 }\n  ]\n}" }, "url": "{{gatewayUrl}}/admins/trains/route" } },
+            { "name": "Create schedule", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"trainId\": \"{{trainId}}\",\n  \"departureDate\": \"{{$isoTimestamp}}\"\n}" }, "url": "{{gatewayUrl}}/admins/schedules/schedule", "description": "Use a future YYYY-MM-DD date. If the timestamp dynamic value is not accepted as a date-only value, replace it with a future date." } },
+            { "name": "Cancel schedule (destructive)", "request": { "method": "PUT", "url": "{{gatewayUrl}}/admins/schedules/schedule/{{scheduleId}}", "description": "Sets the schedule status to CANCELLED." } }
+          ]
+        },
+        {
+          "name": "Search",
+          "item": [
+            { "name": "Search trains", "request": { "method": "GET", "url": "{{gatewayUrl}}/search/trains?from=Delhi&to=Mumbai&date=2026-12-01" } },
+            { "name": "Station autocomplete", "request": { "method": "GET", "url": "{{gatewayUrl}}/search/autocomplete?q=Del" } }
+          ]
+        },
+        {
+          "name": "Inventory proxy",
+          "item": [
+            { "name": "Get schedule availability", "request": { "method": "GET", "url": "{{gatewayUrl}}/inventory/schedules/{{scheduleId}}/availability" } },
+            { "name": "Get schedule seats (authenticated)", "request": { "method": "GET", "url": "{{gatewayUrl}}/inventory/schedules/{{scheduleId}}/seats" } }
+          ]
+        },
+        {
+          "name": "Booking proxy (authenticated)",
+          "item": [
+            { "name": "Create booking", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"scheduleId\": \"{{scheduleId}}\",\n  \"seatIds\": [\"{{seatId2}}\"],\n  \"passengers\": [\n    { \"name\": \"Postman Test Passenger\", \"age\": 30, \"gender\": \"OTHER\" }\n  ],\n  \"idempotencyKey\": \"gateway-{{$guid}}\",\n  \"fromStationId\": \"{{originStationId}}\",\n  \"toStationId\": \"{{destinationStationId}}\",\n  \"fromSeq\": 1,\n  \"toSeq\": 2\n}" }, "url": "{{gatewayUrl}}/bookings/bookings" } },
+            { "name": "List my bookings", "request": { "method": "GET", "url": "{{gatewayUrl}}/bookings/bookings?page=1&limit=10" } },
+            { "name": "Get booking", "request": { "method": "GET", "url": "{{gatewayUrl}}/bookings/bookings/{{bookingId}}" } },
+            { "name": "Verify booking payment", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"razorpayPaymentId\": \"{{gatewayPaymentId}}\",\n  \"razorpaySignature\": \"{{gatewaySignature}}\"\n}" }, "url": "{{gatewayUrl}}/bookings/bookings/{{bookingId}}/verify-payment" } },
+            { "name": "Cancel booking (destructive)", "request": { "method": "POST", "url": "{{gatewayUrl}}/bookings/bookings/{{bookingId}}/cancel" } }
+          ]
+        },
+        {
+          "name": "Webhook and gateway diagnostics",
+          "item": [
+            { "name": "Razorpay webhook (signature required)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "x-razorpay-signature", "value": "{{razorpayWebhookSignature}}" }], "body": { "mode": "raw", "raw": "{\n  \"entity\": \"event\",\n  \"account_id\": \"acc_test\",\n  \"event\": \"payment.captured\",\n  \"contains\": [\"payment\"],\n  \"payload\": {\n    \"payment\": {\n      \"entity\": {\n        \"id\": \"pay_replace_with_real_test_payment\",\n        \"order_id\": \"order_replace_with_real_test_order\",\n        \"amount\": 50000,\n        \"currency\": \"INR\",\n        \"status\": \"captured\"\n      }\n    }\n  }\n}" }, "url": "{{gatewayUrl}}/payments/webhooks/razorpay", "description": "Requires an HMAC signature generated with the configured Razorpay webhook secret for the exact raw body." } },
+            { "name": "Gateway health", "request": { "method": "GET", "url": "{{gatewayUrl}}/gateway/health" } },
+            { "name": "Gateway circuit-breaker status", "request": { "method": "GET", "url": "{{gatewayUrl}}/gateway/circuit-breakers" } }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Direct User Service",
+      "item": [
+        { "name": "Send OTP", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Tester\",\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\",\n  \"confirmPassword\": \"{{password}}\"\n}" }, "url": "{{userServiceUrl}}/auth/send-otp" } },
+        { "name": "Verify OTP", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"otp\": \"{{otp}}\"\n}" }, "url": "{{userServiceUrl}}/auth/verify-otp", "description": "Requires the otp_session cookie set by Send OTP and the real code delivered by email." } },
+        { "name": "Login", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}" }, "url": "{{userServiceUrl}}/auth/login" } },
+        { "name": "Refresh token", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{}" }, "url": "{{userServiceUrl}}/auth/refresh", "description": "Requires the refreshToken cookie from Login." } },
+        { "name": "Get profile", "request": { "method": "GET", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{userServiceUrl}}/user/profile" } },
+        { "name": "Update profile", "request": { "method": "PUT", "header": [{ "key": "x-user-id", "value": "{{userId}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Updated\"\n}" }, "url": "{{userServiceUrl}}/user/profile" } },
+        { "name": "Delete profile (destructive)", "request": { "method": "DELETE", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{userServiceUrl}}/user/profile", "description": "Direct-service equivalent of profile deletion. Run only against a disposable test account." } }
+      ]
+    },
+    {
+      "name": "Direct Admin Service",
+      "item": [
+        { "name": "Create origin station", "request": { "method": "POST", "header": [{ "key": "x-user-id", "value": "{{userId}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Postman Origin {{$timestamp}}\",\n  \"code\": \"PO{{$timestamp}}\",\n  \"city\": \"Test Origin\",\n  \"state\": \"Test State\"\n}" }, "url": "{{adminServiceUrl}}/stations/station" } },
+        { "name": "Create destination station", "request": { "method": "POST", "header": [{ "key": "x-user-id", "value": "{{userId}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Postman Destination {{$timestamp}}\",\n  \"code\": \"PD{{$timestamp}}\",\n  \"city\": \"Test Destination\",\n  \"state\": \"Test State\"\n}" }, "url": "{{adminServiceUrl}}/stations/station" } },
+        { "name": "List stations", "request": { "method": "GET", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{adminServiceUrl}}/stations/station?page=1&limit=20&search=Postman" } },
+        { "name": "Get station by ID", "request": { "method": "GET", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{adminServiceUrl}}/stations/station/{{originStationId}}" } },
+        { "name": "Get station by ID (internal)", "request": { "method": "GET", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }], "url": "{{adminServiceUrl}}/stations/station/internal/{{originStationId}}" } },
+        { "name": "Create train", "request": { "method": "POST", "header": [{ "key": "x-user-id", "value": "{{userId}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"trainNumber\": \"P{{$timestamp}}\",\n  \"trainName\": \"Postman Test Express\",\n  \"coachName\": \"AC\",\n  \"seats\": [\n    { \"seatNumber\": 1, \"seatType\": \"LOWER\", \"price\": 500 },\n    { \"seatNumber\": 2, \"seatType\": \"UPPER\", \"price\": 500 }\n  ]\n}" }, "url": "{{adminServiceUrl}}/trains/train" } },
+        { "name": "List trains", "request": { "method": "GET", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{adminServiceUrl}}/trains/train" } },
+        { "name": "Get train by ID", "request": { "method": "GET", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{adminServiceUrl}}/trains/train/{{trainId}}" } },
+        { "name": "Create route", "request": { "method": "POST", "header": [{ "key": "x-user-id", "value": "{{userId}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"trainId\": \"{{trainId}}\",\n  \"stations\": [\n    { \"stationId\": \"{{originStationId}}\", \"sequenceNumber\": 1, \"arrivalTime\": null, \"departureTime\": \"08:00\", \"distanceFromOrigin\": 0 },\n    { \"stationId\": \"{{destinationStationId}}\", \"sequenceNumber\": 2, \"arrivalTime\": \"12:00\", \"departureTime\": null, \"distanceFromOrigin\": 250 }\n  ]\n}" }, "url": "{{adminServiceUrl}}/trains/route" } },
+        { "name": "Create schedule", "request": { "method": "POST", "header": [{ "key": "x-user-id", "value": "{{userId}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"trainId\": \"{{trainId}}\",\n  \"departureDate\": \"2026-12-01\"\n}" }, "url": "{{adminServiceUrl}}/schedules/schedule", "description": "Change departureDate to a future date that does not already have a schedule for this train." } },
+        { "name": "List schedules", "request": { "method": "GET", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{adminServiceUrl}}/schedules/schedule?trainId={{trainId}}&status=ACTIVE&date=2026-12-01" } },
+        { "name": "Cancel schedule (destructive)", "request": { "method": "PUT", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{adminServiceUrl}}/schedules/schedule/{{scheduleId}}" } }
+      ]
+    },
+    {
+      "name": "Direct Search Service",
+      "item": [
+        { "name": "Search trains", "request": { "method": "GET", "url": "{{searchServiceUrl}}/trains?from=Delhi&to=Mumbai&date=2026-12-01" } },
+        { "name": "Station autocomplete", "request": { "method": "GET", "url": "{{searchServiceUrl}}/autocomplete?q=Del" } },
+        { "name": "Debug stations", "request": { "method": "GET", "url": "{{searchServiceUrl}}/debug/stations" } },
+        { "name": "Debug trains", "request": { "method": "GET", "url": "{{searchServiceUrl}}/debug/trains" } }
+      ]
+    },
+    {
+      "name": "Direct Inventory Service (internal actions require service key)",
+      "item": [
+        { "name": "Get schedule availability", "request": { "method": "GET", "url": "{{inventoryServiceUrl}}/schedules/{{scheduleId}}/availability" } },
+        { "name": "Get schedule seats", "request": { "method": "GET", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{inventoryServiceUrl}}/schedules/{{scheduleId}}/seats?status=AVAILABLE&seatType=LOWER&fromSeq=1&toSeq=2" } },
+        { "name": "Lock seats (internal)", "request": { "method": "POST", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"scheduleId\": \"{{scheduleId}}\",\n  \"seatIds\": [\"{{seatId}}\"],\n  \"ttlSeconds\": 300,\n  \"userId\": \"{{userId}}\",\n  \"fromSeq\": 1,\n  \"toSeq\": 2\n}" }, "url": "{{inventoryServiceUrl}}/seats/lock" } },
+        { "name": "Unlock seats (internal)", "request": { "method": "POST", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"scheduleId\": \"{{scheduleId}}\",\n  \"seatIds\": [\"{{seatId}}\"],\n  \"userId\": \"{{userId}}\",\n  \"fromSeq\": 1,\n  \"toSeq\": 2\n}" }, "url": "{{inventoryServiceUrl}}/seats/unlock" } },
+        { "name": "Lock seats for confirmation (internal)", "request": { "method": "POST", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"scheduleId\": \"{{scheduleId}}\",\n  \"seatIds\": [\"{{seatId}}\"],\n  \"ttlSeconds\": 300,\n  \"userId\": \"{{userId}}\",\n  \"fromSeq\": 1,\n  \"toSeq\": 2\n}" }, "url": "{{inventoryServiceUrl}}/seats/lock" } },
+        { "name": "Confirm seats (internal)", "request": { "method": "POST", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"scheduleId\": \"{{scheduleId}}\",\n  \"seatIds\": [\"{{seatId}}\"],\n  \"bookingId\": \"{{inventoryBookingId}}\",\n  \"userId\": \"{{userId}}\",\n  \"fromSeq\": 1,\n  \"toSeq\": 2\n}" }, "url": "{{inventoryServiceUrl}}/seats/confirm", "description": "Requires seats to be locked first for the same user and segment; run Lock seats for confirmation immediately before this request." } },
+        { "name": "Cancel inventory booking (internal)", "request": { "method": "POST", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"scheduleId\": \"{{scheduleId}}\",\n  \"bookingId\": \"{{inventoryBookingId}}\",\n  \"userId\": \"{{userId}}\"\n}" }, "url": "{{inventoryServiceUrl}}/seats/cancel-booking" } }
+      ]
+    },
+    {
+      "name": "Direct Booking Service",
+      "item": [
+        { "name": "Create booking", "request": { "method": "POST", "header": [{ "key": "x-user-id", "value": "{{userId}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"scheduleId\": \"{{scheduleId}}\",\n  \"seatIds\": [\"{{seatId2}}\"],\n  \"passengers\": [\n    { \"name\": \"Postman Test Passenger\", \"age\": 30, \"gender\": \"OTHER\" }\n  ],\n  \"idempotencyKey\": \"direct-{{$guid}}\",\n  \"fromStationId\": \"{{originStationId}}\",\n  \"toStationId\": \"{{destinationStationId}}\",\n  \"fromSeq\": 1,\n  \"toSeq\": 2\n}" }, "url": "{{bookingServiceUrl}}/bookings" } },
+        { "name": "List my bookings", "request": { "method": "GET", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{bookingServiceUrl}}/bookings?status=CONFIRMED&page=1&limit=10" } },
+        { "name": "Get booking", "request": { "method": "GET", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{bookingServiceUrl}}/bookings/{{bookingId}}" } },
+        { "name": "Verify booking payment", "request": { "method": "POST", "header": [{ "key": "x-user-id", "value": "{{userId}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"razorpayPaymentId\": \"{{gatewayPaymentId}}\",\n  \"razorpaySignature\": \"{{gatewaySignature}}\"\n}" }, "url": "{{bookingServiceUrl}}/bookings/{{bookingId}}/verify-payment" } },
+        { "name": "Cancel booking (destructive)", "request": { "method": "POST", "header": [{ "key": "x-user-id", "value": "{{userId}}" }], "url": "{{bookingServiceUrl}}/bookings/{{bookingId}}/cancel" } }
+      ]
+    },
+    {
+      "name": "Direct Payment Service (internal routes require service key)",
+      "item": [
+        { "name": "Create payment order (internal)", "request": { "method": "POST", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookingId\": \"{{bookingId}}\",\n  \"amount\": 500,\n  \"userId\": \"{{userId}}\",\n  \"idempotencyKey\": \"payment-order-{{$guid}}\"\n}" }, "url": "{{paymentServiceUrl}}/orders" } },
+        { "name": "Get payment order (internal)", "request": { "method": "GET", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }], "url": "{{paymentServiceUrl}}/orders/{{paymentOrderId}}" } },
+        { "name": "Verify and capture payment (internal)", "request": { "method": "POST", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"gatewayPaymentId\": \"{{gatewayPaymentId}}\",\n  \"gatewaySignature\": \"{{gatewaySignature}}\"\n}" }, "url": "{{paymentServiceUrl}}/orders/{{paymentOrderId}}/verify" } },
+        { "name": "Initiate refund (financial side effect)", "request": { "method": "POST", "header": [{ "key": "x-internal-service-key", "value": "{{internalServiceKey}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"paymentOrderId\": \"{{paymentOrderId}}\",\n  \"amount\": 500,\n  \"reason\": \"Postman test refund\",\n  \"idempotencyKey\": \"refund-{{$guid}}\"\n}" }, "url": "{{paymentServiceUrl}}/refunds", "description": "May initiate a real refund with configured payment credentials. Use only a test-mode payment order." } },
+        { "name": "Razorpay webhook (direct)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "x-razorpay-signature", "value": "{{razorpayWebhookSignature}}" }], "body": { "mode": "raw", "raw": "{\n  \"entity\": \"event\",\n  \"account_id\": \"acc_test\",\n  \"event\": \"payment.captured\",\n  \"contains\": [\"payment\"],\n  \"payload\": {\n    \"payment\": {\n      \"entity\": {\n        \"id\": \"pay_replace_with_real_test_payment\",\n        \"order_id\": \"order_replace_with_real_test_order\",\n        \"amount\": 50000,\n        \"currency\": \"INR\",\n        \"status\": \"captured\"\n      }\n    }\n  }\n}" }, "url": "{{paymentServiceUrl}}/webhooks/razorpay", "description": "Requires a valid signature for this exact raw JSON body, signed with the payment service webhook secret." } }
+      ]
+    }
+  ]
+}
